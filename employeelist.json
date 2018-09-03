@@ -1,0 +1,26 @@
+{
+  "employee": [
+    {
+      "name": "Dhanunjaya",
+      "gender": "Male",
+      "contactPreference": "phone",
+      "email": "dhanunjaya522@gmail.com",
+      "dateOfBirth": "1994-04-03",
+      "department": "IT",
+      "isActive": true,
+      "photoPath": "",
+      "id": 1
+    },
+    {
+      "name": "Sindhur",
+      "gender": "Male",
+      "contactPreference": "email",
+      "email": "sindhru@gmail.com",
+      "phoneNumber": "9206363517",
+      "dateOfBirth": "2018-08-01",
+      "department": "HR",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}
