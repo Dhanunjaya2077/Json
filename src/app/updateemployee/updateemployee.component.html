@@ -1,0 +1,87 @@
+<form  #userForm="ngForm" (ngSubmit)="UpdateemployeeData(userForm.value)">
+
+  <div class="panel panel-primary">
+      
+          <div class="panel-heading">
+              <h3 class="panel-title">Edit Employee</h3>
+          </div>
+          <div class="panel-body">
+         
+              <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name"  [(ngModel)]="employee.name" class="form-control" required #nameRef="ngModel">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email"  [(ngModel)]="employee.email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Numer</label>
+                <input type="phone" id="phone" name="phoneNumber"  [(ngModel)]="employee.phoneNumber"  class="form-control">
+            </div>
+              <div class="form-group">
+                  <label >Contact Preferences</label>
+                  <div class="form-control">
+                      <label class="radio-inline">
+                          <input type="radio"  name="contactPreference" value="email"  [(ngModel)]="employee.contactPreference">Email
+                      </label>
+                      <label class="radio-inline">
+                          <input type="radio" name="contactPreference" value="phone"  [(ngModel)]="employee.contactPreference">Phone
+                      </label>
+                  </div>  
+              </div>
+              <div class="form-group">
+                  <label >Gender</label>
+                  <div class="form-control">
+                      <label class="radio-inline">
+                          <input type="radio"  name="gender" value="Male" [(ngModel)]="employee.gender">Male
+                      </label>
+                      <label class="radio-inline">
+                          <input type="radio" name="gender" value="Female" [(ngModel)]="employee.gender">Female
+                      </label>
+                  </div>  
+              </div>
+              <div class="form-group">
+                  <div class="form-control">
+                      <label class="checkbox-inline">
+                          <input type="checkbox" name="isActive" [(ngModel)]="employee.isActive"> Is Active
+                      </label> 
+                  </div>  
+              </div>
+              <div class="form-group">
+                  <label for="department">
+                      Department
+                  </label> 
+                  <select id="department" name="department" [(ngModel)]="employee.department" class="form-control">
+                      <option value="IT">IT</option>
+                      <option value="HR">HR</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Payroll">Payroll</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label class="dateofbirth">Date Of Birth</label> 
+                  <input type="date" name="dateofbirth" [(ngModel)]="employee.dateOfBirth" class="form-control" >
+              
+              </div>
+              <div class="form-group">
+                  <label class="dateofbirth">Photo Path</label> 
+                  <input type="text" name="photopath" [(ngModel)]="employee.photopath" class="form-control">
+                  
+              </div>
+              <div class="form-group">
+                  <button type="button" class="btn btn-primary" (click)="togglephotoPath()">
+                      {{photoPreview ? "Hide":"Show"}} Preview
+                  </button>
+              </div>
+              <div class="form-group">
+                  <img [src]="photopath"width="200px" hegiht="200px">    
+              </div>
+           
+          </div>
+          <div class="panel-footer">
+              <button type="submit" class="btn btn-primary" >Update</button>
+          </div>
+      </div>
+  </form>
+    

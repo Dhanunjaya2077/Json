@@ -1,0 +1,89 @@
+<form  #userForm="ngForm" (ngSubmit)="getemployeeData(userForm.value)">
+
+    <div class="panel panel-primary">
+        
+            <div class="panel-heading">
+                <h3 class="panel-title">Create Employee</h3>
+            </div>
+            <div class="panel-body">
+           
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="fname"  [(ngModel)]="name" class="form-control" required >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="cemail"  [(ngModel)]="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Numer</label>
+                    <input type="phone" id="phone" name="phoneNumber"  [(ngModel)]="phoneNumber"  class="form-control">
+                </div>
+                <div class="form-group">
+                    <label >Contact Preferences</label>
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input type="radio"  name="contactPreference" value="email" [(ngModel)]="contactPreference">Email
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="contactPreference" value="phone" [(ngModel)]="contactPreference">Phone
+                        </label>
+                    </div>  
+                </div>
+                <div class="form-group">
+                    <label >Gender</label>
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input type="radio"  name="gender" value="Male" [(ngModel)]="gender">Male
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" value="Female" >Female
+                        </label>
+                    </div>  
+                </div>
+                <div class="form-group">
+                    <div class="form-control">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="isActive" [(ngModel)]="isActive"> Is Active
+                        </label> 
+                    </div>  
+                </div>
+                <div class="form-group">
+                    <label for="department">
+                        Department
+                    </label> 
+                    <select id="department" name="department" [(ngModel)]="department" class="form-control">
+                        <option value="IT">IT</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Payroll">Payroll</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="dateofbirth">Date Of Birth</label> 
+                    <input type="date" name="dateofbirth" [(ngModel)]="dateofbirth" class="form-control" >
+                
+                </div>
+                <div class="form-group">
+                    <label class="dateofbirth">Photo Path</label> 
+                    <input type="text" name="photopath" [(ngModel)]="photopath" class="form-control">
+                    
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" (click)="togglephotoPath()">
+                        {{photoPreview ? "Hide":"Show"}} Preview
+                    </button>
+                </div>
+                <div class="form-group">
+                    <img [src]="photopath"width="200px" hegiht="200px">    
+                </div>
+             
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary" >Save</button>
+                <button type="reset" class="btn btn-primary" >Reset</button>
+            </div>
+        </div>
+    </form>
+    {{userForm.value | json}}
+      
